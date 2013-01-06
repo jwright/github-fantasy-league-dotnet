@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using TechTalk.SpecFlow;
+using GitHubFantasyLeague.Specs.Support;
 
 namespace GitHubFantasyLeague.Specs.StepDefinitions
 {
@@ -12,7 +13,7 @@ namespace GitHubFantasyLeague.Specs.StepDefinitions
         [Given(@"I am on the home page")]
         public void GivenIAmOnTheHomePage()
         {
-            ScenarioContext.Current.Pending();
+            Engine.Current.Browser.GoTo("http://localhost:8232/");
         }
 
     }

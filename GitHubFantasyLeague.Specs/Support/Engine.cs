@@ -1,0 +1,33 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using WatiN.Core;
+
+namespace GitHubFantasyLeague.Specs.Support
+{
+    public class Engine
+    {
+        private static Engine _current;
+        private Browser _browser;
+
+        public static Engine Current
+        {
+            get
+            {
+                if (_current == null)
+                    _current = new Engine();
+                return _current;
+            }
+        }
+
+        public Browser Browser
+        {
+            get { return _browser; }
+        }
+
+        private Engine()
+        {
+            _browser = new IE();
+        }
+    }
+}
