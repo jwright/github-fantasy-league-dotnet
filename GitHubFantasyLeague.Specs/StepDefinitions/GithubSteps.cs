@@ -6,6 +6,7 @@ using TechTalk.SpecFlow;
 using GitHubFantasyLeague.Specs.Support;
 using WatiN.Core;
 using NUnit.Framework;
+using GitHubFantasyLeague.Models;
 
 namespace GitHubFantasyLeague.Specs.StepDefinitions
 {
