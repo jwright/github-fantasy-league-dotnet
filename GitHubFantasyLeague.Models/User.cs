@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GitHub;
 
 namespace GitHubFantasyLeague.Models
 {
@@ -8,6 +9,7 @@ namespace GitHubFantasyLeague.Models
     {
         private string _username;
         private int? _totalScore;
+        private GitHubScorer _scorer;
 
         public string Username
         {
@@ -19,6 +21,19 @@ namespace GitHubFantasyLeague.Models
             get { return _totalScore; }
         }
 
+        private GitHubScorer Scorer
+        {
+            get
+            {
+                if (_scorer == null)
+                {
+                    IEnumerable<Event> data = new EventParser(_username).Get();
+                    _scorer = new GitHubScorer(data).Score();
+                }
+                return _scorer;
+            }
+        }
+
         public static User Find(string username)
         {
             return new User(username);
@@ -26,9 +41,7 @@ namespace GitHubFantasyLeague.Models
 
         public User Calculate()
         {
-            IList<string> data = null;
-            var scorer = new GitHubScorer(data);
-            _totalScore = scorer.Score().TotalScore;
+            _totalScore = Scorer.TotalScore;
             return this;
         }
 

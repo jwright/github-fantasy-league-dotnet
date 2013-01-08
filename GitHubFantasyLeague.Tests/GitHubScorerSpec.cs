@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NSpec;
 using GitHubFantasyLeague.Models;
+using GitHub;
 
 namespace GitHubFantasyLeague.Tests
 {
@@ -13,15 +14,15 @@ namespace GitHubFantasyLeague.Tests
             GitHubScorer subject = null;
             before = () =>
             {
-                var data = new List<string>();
-                data.Add("CommitCommentEvent");
-                data.Add("IssuesEvent");
-                data.Add("IssueCommentEvent");
-                data.Add("WatchEvent");
-                data.Add("PullRequestEvent");
-                data.Add("PushEvent");
-                data.Add("FollowEvent");
-                data.Add("CreateEvent");
+                var data = new List<Event>();
+                data.Add(new Event { Type = "CommitCommentEvent" });
+                data.Add(new Event { Type = "IssuesEvent" });
+                data.Add(new Event { Type = "IssueCommentEvent" });
+                data.Add(new Event { Type = "WatchEvent" });
+                data.Add(new Event { Type = "PullRequestEvent" });
+                data.Add(new Event { Type = "PushEvent" });
+                data.Add(new Event { Type = "FollowEvent" });
+                data.Add(new Event { Type = "CreateEvent" });
                 subject = new GitHubScorer(data);
             };
             it["should parse events"] = () =>
