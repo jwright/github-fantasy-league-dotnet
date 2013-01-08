@@ -26,7 +26,9 @@ namespace GitHubFantasyLeague.Models
 
         public User Calculate()
         {
-            _totalScore = 0;
+            IList<string> data = null;
+            var scorer = new GitHubScorer(data);
+            _totalScore = scorer.Score().TotalScore;
             return this;
         }
 

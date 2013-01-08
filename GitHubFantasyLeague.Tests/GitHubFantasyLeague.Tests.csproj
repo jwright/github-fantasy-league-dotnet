@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebuggerShim.cs" />
+    <Compile Include="GitHubScorerSpec.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserSpec.cs" />
   </ItemGroup>
