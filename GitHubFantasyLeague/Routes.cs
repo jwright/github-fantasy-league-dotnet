@@ -10,7 +10,8 @@ namespace GitHubFantasyLeague
     {
         public override void Map(IMapper map)
         {
-            map.DebugRoute("routedebug"); 
+            map.DebugRoute("routedebug");
+            map.Resources<UsersController>(u => { u.Only("create"); });
             map.Root<HomeController>(x => x.Index());
         }
 

@@ -2,11 +2,13 @@
     ViewBag.Title = "Index";
 }
 
-<div class="field">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" />
-</div>
+<form action="users" method="post">
+    <div class="field">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" />
+    </div>
 
-<div class="actions">
-    <a href="#" class="score-trigger">Get scores</a>
-</div>
+    <div class="actions">
+        <button type="submit" class="score-trigger">Get scores</button>
+    </div>
+</form>

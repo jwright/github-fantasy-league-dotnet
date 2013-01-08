@@ -25,14 +25,14 @@ namespace GitHubFantasyLeague.Specs.StepDefinitions
         public void WhenIEnterTheGithubUsername()
         {
             Engine.Current.Browser.TextFields.First(Find.ByLabelText("Username")).Value = _username;
-            Engine.Current.Browser.Link(Find.ByText("Get scores")).Click();
+            Engine.Current.Browser.Button(Find.ByText("Get scores")).Click();
         }
 
         [Then(@"I should see the total score")]
         public void ThenIShouldSeeTheTotalScore()
         {
             var totalScore = User.Find(_username).Calculate().TotalScore;
-            Assert.AreEqual(Engine.Current.Browser.Span(Find.ById("total-score")).Text, totalScore);
+            Assert.AreEqual(Engine.Current.Browser.Span(Find.ById("total-score")).Text, totalScore.ToString());
         }
 
     }
