@@ -56,6 +56,10 @@
       <Project>{384B061A-6890-472F-9244-F6F9D567F49D}</Project>
       <Name>GitHubFantasyLeague.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GitHub\GitHub.csproj">
+      <Project>{D92A509F-7584-4E9E-9DC8-1E2B4AED5FF2}</Project>
+      <Name>GitHub</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

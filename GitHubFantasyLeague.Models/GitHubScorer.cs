@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using GitHub;
 
 namespace GitHubFantasyLeague.Models
 {
     public class GitHubScorer
     {
-        private IEnumerable<string> _data;
+        private IEnumerable<Event> _data;
         private IList<string> _events;
         private int? _totalScore;
 
@@ -20,7 +21,7 @@ namespace GitHubFantasyLeague.Models
             get { return _totalScore; }
         }
 
-        public GitHubScorer(IEnumerable<string> data)
+        public GitHubScorer(IEnumerable<Event> data)
         {
             _data = data;
             Parse();
@@ -68,7 +69,7 @@ namespace GitHubFantasyLeague.Models
         {
             _events = new List<string>();
             foreach (var @event in _data)
-                _events.Add(@event);
+                _events.Add(@event.Type);
         }
     }
 }
