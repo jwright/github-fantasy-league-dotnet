@@ -11,6 +11,12 @@ The Ruby version of this code is deployed at [http://githubfantasy.com](http://g
 
 A Ruby version of this same application is available at [github-fantasy-league](https://github.com/jwright/github-fantasy-league).
 
+**UPDATE (1/26/2015)**: GitHub updated their API. The Walkthrough and this code refers to the API being at `https://githib.com{username}.json`. This is the old API per this blog post: (http://git.io/17AROg)[http://git.io/17AROg]. The Ruby version of the code has been updated with the following commits:
+* https://github.com/jwright/github-fantasy-league/commit/314a70fd563ba9e4c1456af9bd43e6c16726b5d0
+* https://github.com/jwright/github-fantasy-league/commit/af0fcc9bf2926aae09bc02afa0f5c285be580cb2
+
+This repo will not be updated unless you want to submit pull requests
+
 ### Scoring system
 
 The score is calculated based on the following activity stream's events.
